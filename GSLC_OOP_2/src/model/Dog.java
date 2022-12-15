@@ -1,6 +1,8 @@
 package model;
 
-public class Dog extends Pet {
+import interf.bab;
+
+public class Dog extends Pet implements bab{
 
 	public Dog(String name) {
 		super(name);
@@ -16,4 +18,10 @@ public class Dog extends Pet {
 	public void bark() {
 		System.out.println(this.getName() + " is barking");
 	}
+	
+	@Override
+	public void ee() {
+		System.out.println(this.getName() + " sudah BAB");
+	}
+	
 }

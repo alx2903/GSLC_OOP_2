@@ -11,6 +11,7 @@ import model.Human;
 import model.Lion;
 import model.Monyet;
 import model.Pet;
+import interf.bab;
 
 public class Main {
 
@@ -47,6 +48,7 @@ public class Main {
 					Dog dog = new Dog(name); // masukin name ke Dog
 					Vec.add(dog); // Masukin dog ke vector
 					dog.speak(); // ini manggil function speak yang ad di class dog
+					dog.ee(); // ini interface
 				}
 				else if(tipe.matches("Kucing") == true) { // di bawah nya harusnya juga sama semua beda nama function aja
 					System.out.println("Masukkan Nama:");
@@ -124,7 +126,7 @@ public class Main {
 				}
 				else {
 					int i = 1;
-					System.out.printf("%-3s | %-8s", "No", "Name");
+					System.out.printf("%-3s | %-8s\n", "No", "Name");
 					for (Pet pet : Vec) {
 						System.out.printf("%-3d | %-8s\n", i, pet.getName());
 						i++;
