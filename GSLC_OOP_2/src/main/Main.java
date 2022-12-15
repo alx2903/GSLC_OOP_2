@@ -3,6 +3,7 @@ package main;
 import java.util.Scanner;
 import java.util.Vector;
 
+// import dari package model, karena saya bikin super class dan subclass di package lain
 import model.Babi;
 import model.Cat;
 import model.Dog;
@@ -21,6 +22,7 @@ public class Main {
 		String tipe;
 		
 		do {
+			// MENU
 			System.out.println("Kebun Binatang");
 			System.out.println("1. Add Binatang");
 			System.out.println("2. View Binatang");
@@ -39,14 +41,14 @@ public class Main {
 						break;
 					}
 				}
-				if(tipe.matches("Anjing") == true) {
+				if(tipe.matches("Anjing") == true) { // Ini kalo misal tipe tulis "Anjing" masuk ke sini
 					System.out.println("Masukkan Nama: ");
 					name = scan.nextLine();
-					Dog dog = new Dog(name);
-					Vec.add(dog);
-					dog.speak();
+					Dog dog = new Dog(name); // masukin name ke Dog
+					Vec.add(dog); // Masukin dog ke vector
+					dog.speak(); // ini manggil function speak yang ad di class dog
 				}
-				else if(tipe.matches("Kucing") == true) {
+				else if(tipe.matches("Kucing") == true) { // di bawah nya harusnya juga sama semua beda nama function aja
 					System.out.println("Masukkan Nama:");
 					name = scan.nextLine();
 					Cat cat = new Cat(name);
@@ -85,7 +87,7 @@ public class Main {
 			
 			case 2:
 				if(Vec.isEmpty() == true) {
-					System.out.println("Masukkin Binatang Dulu!!");
+					System.out.println("Masukkin Binatang Dulu!!"); // kalo isi kosong bakal keluar ini
 				}
 				else {
 					int i = 1;
@@ -93,7 +95,7 @@ public class Main {
 					for (Pet pet : Vec) {
 						System.out.printf("%-3d | %-8s | ", i, pet.getName());
 						if(pet instanceof Dog) {
-							((Dog) pet).bark();
+							((Dog) pet).bark(); // ini juga function yang ada di model masing2
 						}
 						else if(pet instanceof Cat) {
 							((Cat) pet).scracth();
@@ -130,7 +132,7 @@ public class Main {
 					System.out.printf("Select to kill: ");
 					int del;
 					del = scan.nextInt();
-					System.out.printf(Vec.get(del-1).getName() + " has been killed\n\n");
+					System.out.printf(Vec.get(del-1).getName() + " has been killed\n\n"); // Hapus atau membunuh hewan yang tidak diinginkan
 					Vec.remove(del-1);
 					break;
 				}
